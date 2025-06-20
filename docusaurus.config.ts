@@ -15,12 +15,12 @@ const config: Config = {
 
   // Set the production url of your site here
   url: 'https://aiswaryaanilnair.github.io',
-  baseUrl: '/elsai-arms-doc/',
+  baseUrl: '/elsai_arms_doc/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'aiswaryaanilnair', // Usually your GitHub org/user name.
-  projectName: 'elsai-arms-doc', // Usually your repo name.
+  projectName: 'elsai_arms_doc', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
