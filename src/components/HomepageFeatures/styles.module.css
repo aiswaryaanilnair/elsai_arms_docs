@@ -208,3 +208,64 @@
     padding: 2rem 0;
   }
 }
+[data-theme='dark'] .heroSection {
+  background: #0b1a60;
+  color: white;
+}
+
+[data-theme='dark'] .heroSubtitle,
+[data-theme='dark'] .heroDescription {
+  color: #ccc;
+}
+
+[data-theme='dark'] .heroButtons .button {
+  border: 2px solid #ccc;
+  color: #ccc;
+}
+
+[data-theme='dark'] .heroButtons .button:hover {
+  background: #ccc;
+  color: #0b1a60;
+}
+
+[data-theme='dark'] .challengesSection {
+  background-color: #111827;
+}
+
+[data-theme='dark'] .sectionDescription {
+  color: #ddd;
+}
+
+[data-theme='dark'] .challengeItem {
+  background: #1f2937;
+  border-left-color: #8faaff;
+  color: #eee;
+}
+
+[data-theme='dark'] .solutionText {
+  background: linear-gradient(135deg, #8faaff, #a78bfa);
+  color: black;
+}
+
+[data-theme='dark'] .features {
+  background: linear-gradient(180deg, transparent 0%, #0f172a 100%);
+}
+
+[data-theme='dark'] .features .col > div {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .features h3 {
+  color: #e0e7ff;
+}
+
+[data-theme='dark'] .features p {
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .featureSvg {
+  color: #a5b4fc;
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.05));
+}

@@ -12,15 +12,15 @@ type FeatureItem = {
 // Simple inline SVG components as placeholders
 const MonitoringSvg = () => (
   <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="100" cy="100" r="80" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <path d="M60 100 L80 120 L120 80 L140 100" stroke="#667eea" strokeWidth="3" fill="none"/>
+    <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <path d="M60 100 L80 120 L120 80 L140 100" stroke="currentColor" strokeWidth="3" fill="none"/>
     <circle cx="100" cy="100" r="8" fill="#667eea"/>
   </svg>
 );
 
 const FinancialSvg = () => (
   <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="50" y="50" width="100" height="100" rx="10" stroke="#667eea" strokeWidth="4" fill="none"/>
+    <rect x="50" y="50" width="100" height="100" rx="10" stroke="currentColor" strokeWidth="4" fill="none"/>
     <text x="100" y="105" textAnchor="middle" fill="#667eea" fontSize="24" fontWeight="bold">$</text>
     <circle cx="70" cy="70" r="4" fill="#667eea"/>
     <circle cx="130" cy="70" r="4" fill="#667eea"/>
@@ -31,43 +31,43 @@ const FinancialSvg = () => (
 
 const GovernanceSvg = () => (
   <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="100,40 140,80 140,140 60,140 60,80" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <rect x="80" y="100" width="40" height="40" stroke="#667eea" strokeWidth="3" fill="none"/>
+    <polygon points="100,40 140,80 140,140 60,140 60,80" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <rect x="80" y="100" width="40" height="40" stroke="currentColor" strokeWidth="3" fill="none"/>
     <circle cx="100" cy="120" r="8" fill="#667eea"/>
   </svg>
 );
 
 const DatabaseSvg = () => (
   <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="100" cy="70" rx="50" ry="15" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <ellipse cx="100" cy="100" rx="50" ry="15" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <ellipse cx="100" cy="130" rx="50" ry="15" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <line x1="50" y1="70" x2="50" y2="130" stroke="#667eea" strokeWidth="4"/>
-    <line x1="150" y1="70" x2="150" y2="130" stroke="#667eea" strokeWidth="4"/>
+    <ellipse cx="100" cy="70" rx="50" ry="15" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <ellipse cx="100" cy="100" rx="50" ry="15" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <ellipse cx="100" cy="130" rx="50" ry="15" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <line x1="50" y1="70" x2="50" y2="130" stroke="currentColor" strokeWidth="4"/>
+    <line x1="150" y1="70" x2="150" y2="130" stroke="currentColor" strokeWidth="4"/>
   </svg>
 );
 
 const ControlSvg = () => (
   <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="50" y="60" width="100" height="80" rx="10" stroke="#667eea" strokeWidth="4" fill="none"/>
+    <rect x="50" y="60" width="100" height="80" rx="10" stroke="currentColor" strokeWidth="4" fill="none"/>
     <rect x="70" y="80" width="60" height="8" fill="#667eea"/>
     <rect x="70" y="100" width="40" height="8" fill="#667eea"/>
     <rect x="70" y="120" width="50" height="8" fill="#667eea"/>
     <circle cx="130" cy="45" r="8" fill="#667eea"/>
-    <line x1="130" y1="45" x2="100" y2="60" stroke="#667eea" strokeWidth="3"/>
+    <line x1="130" y1="45" x2="100" y2="60" stroke="currentColor" strokeWidth="3"/>
   </svg>
 );
 
 const IntegrationSvg = () => (
   <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="70" cy="70" r="20" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <circle cx="130" cy="70" r="20" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <circle cx="70" cy="130" r="20" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <circle cx="130" cy="130" r="20" stroke="#667eea" strokeWidth="4" fill="none"/>
-    <line x1="90" y1="70" x2="110" y2="70" stroke="#667eea" strokeWidth="3"/>
-    <line x1="70" y1="90" x2="70" y2="110" stroke="#667eea" strokeWidth="3"/>
-    <line x1="130" y1="90" x2="130" y2="110" stroke="#667eea" strokeWidth="3"/>
-    <line x1="90" y1="130" x2="110" y2="130" stroke="#667eea" strokeWidth="3"/>
+    <circle cx="70" cy="70" r="20" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <circle cx="130" cy="70" r="20" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <circle cx="70" cy="130" r="20" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <circle cx="130" cy="130" r="20" stroke="currentColor" strokeWidth="4" fill="none"/>
+    <line x1="90" y1="70" x2="110" y2="70" stroke="currentColor" strokeWidth="3"/>
+    <line x1="70" y1="90" x2="70" y2="110" stroke="currentColor" strokeWidth="3"/>
+    <line x1="130" y1="90" x2="130" y2="110" stroke="currentColor" strokeWidth="3"/>
+    <line x1="90" y1="130" x2="110" y2="130" stroke="currentColor" strokeWidth="3"/>
   </svg>
 );
 
