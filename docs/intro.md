@@ -52,4 +52,4 @@ Elsai ARMS is a lightweight monitoring and cost-tracking system for LLM-based ag
 | **Start Time**        | The exact timestamp when the run or process began execution.                                                         |
 | **End Time**          | The exact timestamp when the run or process completed execution.                                                           |
 | **Execution Duration**| The total time taken from the start to the end of the run, typically measured in seconds .                                 |
-| **Success Status**    | Boolean or enum (SUCCESS, FAILED) indicating whether the run met its goal.      |
+| **Success Status**    | SUCCESS/FAILED indicating whether the run met its goal.      |

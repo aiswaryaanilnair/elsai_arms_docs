@@ -5,12 +5,14 @@ sidebar_position: 4
 # Tutorial
 
 ## Usage Example
+#### Installation
 ```bash
-!pip install elsai-arms
+!pip install --extra-index-url http://100.27.208.107:3141/root/elsai-arms/+simple/ --trusted-host 100.27.208.107 elsai-arms==0.1.0
 ```
 
+#### Sample Code
 ```python
-from elsai_arms.api import ElsaiARMS
+from elsai_arms.elsai_arms import ElsaiARMS
 from elsai_core.model import AzureOpenAIConnector
 
 arms = ElsaiARMS("Project_Name")
@@ -58,13 +60,13 @@ arms.log_custom_metric(“Metric Name”, metric_value)
 ```
 7. To implement loggers:
 ```bash
-arms.info("Log")
+arms.info("Log Operation")
 ```
 8. To log errors:
 ```bash
-arms.error("Error Message")
+arms.error("Log Error")
 ```
-9. Once metrics are logged, the exporter module is used to export logs in JSON format. 
+9. Once metrics are logged, the exporter module is used to export logs in JSON format. To export data:
 ```bash
 arms.export()
 ```

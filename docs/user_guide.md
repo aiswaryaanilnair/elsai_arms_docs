@@ -12,7 +12,7 @@ Follow the steps given below to use ARMS in your project.
 ### Import
 
 ```bash
-from elsai_arms.api import ElsaiARMS
+from elsai_arms.elsai_arms import ElsaiARMS
 ```
 
 ### Initialisation
@@ -51,19 +51,22 @@ def get_response(prompt: str):
 
 To log domain-specific or internal metrics as a key value pair.
 ```bash
-arms.log_custom_metric("Key", value)
+arms.log_custom_metric(“Metric Name”, metric_value) 
 ```
 
 ### Setting Logger
 
-Maintans a log of the project.
+Elsai ARMS provides built-in logging for tracking important events and errors during your project’s execution.
+#### Info Logs
+Use `.info()` to log standard messages:
 ```bash
-arms.info("Insert Log")
+arms.info("Log Operation")
 ```
 
-Error Logs:
+#### Error Logs
+Use `.error()` to log error messages:
 ```bash
-arms.error("Error Log")
+arms.error("Log Error")
 ```
 
 ### Exporting Metrics
