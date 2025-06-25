@@ -15,7 +15,7 @@ const config: Config = {
 
   // Set the production url of your site here
   url: 'https://aiswaryaanilnair.github.io',
-  baseUrl: '/elsai_arms_docs/',
+  baseUrl: '/',
 
   organizationName: 'aiswaryaanilnair', // Your GitHub username
   projectName: 'elsai_arms_docs', // Usually your repo name.
