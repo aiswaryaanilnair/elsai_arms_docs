@@ -14,7 +14,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Elsai ARMS for Traceability and Observability">
       <main>
         <HomepageFeatures />
       </main>
