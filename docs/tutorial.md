@@ -13,7 +13,7 @@ sidebar_position: 4
 #### Sample Code
 ```python
 from elsai_arms.elsai_arms import ElsaiARMS
-from elsai_core.model import AzureOpenAIConnector
+from elsai_model.azure_openai import AzureOpenAIConnector
 
 arms = ElsaiARMS("Project_Name")
 
