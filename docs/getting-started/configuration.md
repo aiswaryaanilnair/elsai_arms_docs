@@ -18,7 +18,7 @@ Before using `elsai-arms`, you need to set up a `.env` file in your project root
 ELSAI_ARMS_API_KEY=<your_api_key>
 
 MONGO_URI=<your_mongo_uri>
-DB_NAME=<your_database_name>
+MONGO_DB_NAME=<your_database_name>
 ```
 
 ### Configuration Details
@@ -37,19 +37,19 @@ DB_NAME=<your_database_name>
 Local MongoDB:
 ```bash
 MONGO_URI=mongodb://localhost:27017
-DB_NAME=elsai_arms_db
+MONGO_DB_NAME=elsai_arms_db
 ```
 
 MongoDB Atlas (Cloud):
 ```bash
 MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority
-DB_NAME=elsai_arms_db
+MONGO_DB_NAME=elsai_arms_db
 ```
 
 Docker MongoDB:
 ```bash
 MONGO_URI=mongodb://mongodb:27017
-DB_NAME=elsai_arms_db
+MONGO_DB_NAME=elsai_arms_db
 ```
 
 ## Docker Setup
@@ -78,7 +78,7 @@ services:
       - mongodb
     environment:
       - MONGO_URI=mongodb://admin:password@mongodb:27017
-      - DB_NAME=elsai_arms_db
+      - MONGO_DB_NAME=elsai_arms_db
       - ELSAI_ARMS_API_KEY=${ELSAI_ARMS_API_KEY}
 
 volumes:
