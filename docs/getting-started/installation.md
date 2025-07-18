@@ -18,7 +18,7 @@ Before installing ElsaiARMS, ensure you have:
 ### 1. Install via pip
 
 ```bash
-pip install --extra-index-url http://100.27.208.107:3141/root/elsai-arms/+simple/ --trusted-host 100.27.208.107 elsai-arms==0.1.0
+pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms/ elsai-arms==0.1.1
 ```
 
 This installs the latest version of the `elsai-arms` package from your private PyPI repository.
@@ -38,7 +38,15 @@ pip install -e .
 After installation, verify that ElsaiARMS is installed correctly:
 
 ```bash
-python -c "import elsai_arms; print(elsai_arms.__version__)"
+pip show elsai-arms
+```
+
+## Upgrade to latest version
+
+To upgrade to latest version of ElsaiARMS:
+
+```bash
+pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms/ elsai-arms --upgrade
 ```
 
 ## Next Steps
