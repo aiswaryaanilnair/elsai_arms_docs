@@ -14,8 +14,8 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://arms.elsaifoundry.ai/documentation',
-  baseUrl: '/',
+  url: 'https://arms.elsaifoundry.ai',
+  baseUrl: '/documentation/',
 
   organizationName: 'aiswaryaanilnair', // Your GitHub username
   projectName: 'elsai_arms_docs', // Usually your repo name.
