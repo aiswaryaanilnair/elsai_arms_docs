@@ -7,7 +7,7 @@ sidebar_position: 5
 <div className="concept-hero">
   <div className="hero-content">
     <p className="hero-description">
-      The ARMS modules form the backbone of the system, handling all telemetry, logging, and data management operations. The key features include token usage and cost tracking per project, mongoDB backend for centralized data storage, JSON export capabilities for visualization, and custom metrics logging capabilities.
+The ARMS modules form the backbone of the system, handling all telemetry, logging, and data management operations. The key features include token usage and cost tracking per project, mongoDB backend for centralized data storage, JSON export capabilities for visualization, and custom metrics logging capabilities. 
     </p>
   </div>
 </div>
@@ -22,7 +22,7 @@ sidebar_position: 5
     </div>
     
     <p className="module-description">
-      Acts as the orchestrator and public interface for the entire ARMS framework. This class initializes all sub-modules and provides a high-level API to start monitoring, record token usage, and export metrics. The ElsaiARMS class manages:
+Acts as the orchestrator and public interface for the entire ARMS framework. This class initializes all sub-modules and provides a high-level API to start monitoring, record token usage, and export metrics. The ElsaiARMS class manages: 
     </p>
     
     <div className="feature-list">
@@ -56,7 +56,7 @@ sidebar_position: 5
     </div>
     
     <p className="module-description">
-      Maintains metadata and persistent state related to each LLM project, such as project name, creation time, and session records. The project manager gets the log for each run from run data in Elsai ARMS and stores the details in a database. Handles:
+Maintains metadata and persistent state related to each LLM project, such as project name, creation time, and session records. The project manager gets the log for each run from run data in Elsai ARMS and stores the details in a database. Handles: 
     </p>
     
     <div className="feature-list">
@@ -103,7 +103,7 @@ sidebar_position: 5
     </div>
     
     <p className="module-description">
-      Tracks input/output tokens used across all LLM interactions within a project session. Provides an overview of token usage for each project. Gets token details from LLM response metadata from LLM monitoring function.
+Tracks input/output tokens used across all LLM interactions within a project session. Provides an overview of token usage for each project. Gets token details from LLM response metadata from LLM monitoring function. 
     </p>
 
     <div className="features-highlight">
@@ -392,7 +392,7 @@ sidebar_position: 5
     </div>
     
     <p className="module-description">
-      Formats all accumulated project data into a structured exportable format, JSON.
+Formats all accumulated project data into a structured exportable format, JSON. 
     </p>
 
     <div className="features-highlight">
