@@ -1,0 +1,167 @@
+.installationTabs {
+  margin: 2rem 0;
+}
+
+.tabButtons {
+  display: flex;
+  border-bottom: 2px solid #e1e5e9;
+  margin-bottom: 1.5rem;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  margin-right: 0.5rem;
+}
+
+.tabButton:hover {
+  color: #495057;
+  background-color: #f8f9fa;
+}
+
+.tabButton.active {
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
+  background-color: #f8f9fa;
+}
+
+.tabPane {
+  display: none;
+}
+
+.tabPane.active {
+  display: block;
+}
+
+.installationCommand {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.commandCode {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  cursor: text;
+  user-select: text;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commandCode:hover {
+  background: #1a202c;
+}
+
+.commandCode code {
+  color: inherit;
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-all;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.copyButton {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.copyButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.copyButton:active {
+  transform: scale(0.95);
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .tabButton {
+  color: #adb5bd;
+}
+
+[data-theme='dark'] .tabButton:hover {
+  color: #ced4da;
+  background-color: #343a40;
+}
+
+[data-theme='dark'] .tabButton.active {
+  background-color: #343a40;
+}
+
+[data-theme='dark'] .installationCommand {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+[data-theme='dark'] .commandCode {
+  background: #1a202c;
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .commandCode:hover {
+  background: #0f1419;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tabButtons {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .tabButton {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #e1e5e9;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .tabButton.active {
+    border-bottom-color: var(--ifm-color-primary);
+  }
+
+  .commandCode {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .commandCode code {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .copyButton {
+    align-self: flex-end;
+  }
+} 

@@ -37,8 +37,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -48,12 +46,11 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/social_card.png',
     navbar: {
       title: 'Home',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'ARMS Logo',
         src: 'img/arms.png',
       },
       items: [

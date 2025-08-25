@@ -1,0 +1,95 @@
+.metricsSection {
+  margin-bottom: 2rem;
+}
+
+.metricsHeader {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.metricsHeader:hover {
+  background-color: rgba(6, 23, 95, 0.05);
+  border-radius: 4px;
+  padding-left: 0.5rem;
+}
+
+.metricsHeader h3 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.metricsArrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  transition: transform 0.3s ease;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+.metricsArrow.expanded {
+  transform: rotate(90deg);
+}
+
+.metricsContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.metricsContent.expanded {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.metricsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.metricsTable th,
+.metricsTable td {
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.metricsTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+.metricsTable tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.metricsTable tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .metricsTable th {
+  background-color: #2d3748;
+  color: var(--ifm-color-primary-lightest);
+}
+
+[data-theme='dark'] .metricsTable tr:nth-child(even) {
+  background-color: #1a202c;
+}
+
+[data-theme='dark'] .metricsTable tr:hover {
+  background-color: #2d3748;
+}
+
+[data-theme='dark'] .metricsHeader:hover {
+  background-color: rgba(22, 116, 192, 0.1);
+} 
