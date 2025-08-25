@@ -91,7 +91,7 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
             </div>
             <div className="env-variable">
               <span className="var-name">DYNAMODB_TABLE_NAME</span>
-              <span className="var-value">elsai-arms-data</span>
+              <span className="var-value">arms-metrics</span>
             </div>
           </div>
         </div>
@@ -309,7 +309,7 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
         <code>AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE</code><br/>
         <code>AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code><br/>
         <code>AWS_REGION=us-east-1</code><br/>
-        <code>DYNAMODB_TABLE_NAME=elsai-arms-data</code>
+        <code>DYNAMODB_TABLE_NAME=arms-metrics</code>
       </div>
     </div>
     
@@ -320,7 +320,7 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
         <code>AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code><br/>
         <code>AWS_SESSION_TOKEN=AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=</code><br/>
         <code>AWS_REGION=us-east-1</code><br/>
-        <code>DYNAMODB_TABLE_NAME=elsai-arms-data</code>
+        <code>DYNAMODB_TABLE_NAME=arms-metrics</code>
       </div>
     </div>
   </div>
@@ -353,7 +353,7 @@ services:
       - mongodb
     environment:
       - MONGO_URI=mongodb://admin:password@mongodb:27017
-      - MONGO_DB_NAME=elsai_arms_db
+      - MONGO_DB_NAME=arms-metrics
       - ELSAI_ARMS_API_KEY=${ELSAI_ARMS_API_KEY}
 
 volumes:
@@ -381,7 +381,7 @@ services:
       - AWS_ACCESS_KEY_ID=dummy
       - AWS_SECRET_ACCESS_KEY=dummy
       - AWS_REGION=us-east-1
-      - DYNAMODB_TABLE_NAME=elsai-arms-data
+      - DYNAMODB_TABLE_NAME=arms-metrics
       - ELSAI_ARMS_API_KEY=${ELSAI_ARMS_API_KEY}
 ```
 
@@ -395,14 +395,14 @@ ELSAI_ARMS_API_KEY=arms-1234567890abcdef
 
 # MongoDB Configuration (choose one)
 MONGO_URI=mongodb://localhost:27017
-MONGO_DB_NAME=elsai_arms_db
+MONGO_DB_NAME=arms-metrics
 
 # OR DynamoDB Configuration (choose one)
 AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 AWS_SESSION_TOKEN=AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=
 AWS_REGION=us-east-1
-DYNAMODB_TABLE_NAME=elsai-arms-data
+DYNAMODB_TABLE_NAME=arms-metrics
 ```
 
 ## Next Steps
