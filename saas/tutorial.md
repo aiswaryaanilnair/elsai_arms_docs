@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 # Tutorial
@@ -7,7 +7,7 @@ sidebar_position: 4
 ## Usage Example
 #### Installation
 ```bash
-!pip install --extra-index-url http://100.27.208.107:3141/root/elsai-arms/+simple/ --trusted-host 100.27.208.107 elsai-arms==1.0.0
+!pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms-sass/ elsai-arms==0.1.0
 ```
 
 #### Sample Code
@@ -56,6 +56,7 @@ try:
 
     arms.log_custom_metric("Number of response", 1)
     arms.info("Run completed")
+    arms.warning("This is a sample code")
 
     arms.end_run()
 

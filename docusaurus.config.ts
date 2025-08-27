@@ -2,30 +2,23 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'Elsai ARMS',
   favicon: 'img/favicon.png',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: 'https://arms.elsaifoundry.ai',
   baseUrl: '/documentation/',
 
-  organizationName: 'aiswaryaanilnair', // Your GitHub username
-  projectName: 'elsai_arms_docs', // Usually your repo name.
+  organizationName: 'aiswaryaanilnair',
+  projectName: 'elsai_arms_docs',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -36,12 +29,27 @@ const config: Config = {
       'classic',
       {
         docs: {
+          id: 'default',
+          path: 'sdk',
+          routeBasePath: 'sdk',
           sidebarPath: './sidebars.ts',
         },
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'saas',
+        path: 'saas',
+        routeBasePath: 'saas',
+        sidebarPath: './sidebarsSaas.ts',
+      },
     ],
   ],
 
@@ -58,7 +66,14 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'SDK',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'saasSidebar',     // from sidebarsSaas.ts
+          docsPluginId: 'saas',         // 👈 must match plugin id
+          position: 'left',
+          label: 'SAAS',
         },
       ],
     },
@@ -69,8 +84,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Docs',
-              to: '/docs/intro',
+              label: 'SDK',
+              to: '/sdk/intro',
+            },
+            {
+              label: 'SAAS',
+              to: '/saas/intro',
             },
           ],
         },

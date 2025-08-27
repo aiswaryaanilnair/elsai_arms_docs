@@ -73,18 +73,32 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
             <h5>DynamoDB</h5>
           </div>
           <div className="option-content">
-            <div className="env-variable">
-              <span className="var-name">AWS_ACCESS_KEY_ID</span>
-              <span className="var-value">AKIAIOSFODNN7EXAMPLE</span>
+            <p className="auth-note">Choose one authentication method:</p>
+            
+            <div className="auth-method">
+              <h6>Method 1: AWS Credentials</h6>
+              <div className="env-variable">
+                <span className="var-name">AWS_ACCESS_KEY_ID</span>
+                <span className="var-value">AKIAIOSFODNN7EXAMPLE</span>
+              </div>
+              <div className="env-variable">
+                <span className="var-name">AWS_SECRET_ACCESS_KEY</span>
+                <span className="var-value">wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</span>
+              </div>
+              <div className="env-variable">
+                <span className="var-name">AWS_SESSION_TOKEN</span>
+                <span className="var-value">AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=</span>
+              </div>
             </div>
-            <div className="env-variable">
-              <span className="var-name">AWS_SECRET_ACCESS_KEY</span>
-              <span className="var-value">wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</span>
+            
+            <div className="auth-method">
+              <h6>Method 2: Cognito Identity</h6>
+              <div className="env-variable">
+                <span className="var-name">AWS_COGNITO_IDENTITY</span>
+                <span className="var-value">us-east-1:12345678-1234-1234-1234-123456789012</span>
+              </div>
             </div>
-            <div className="env-variable">
-              <span className="var-name">AWS_SESSION_TOKEN</span>
-              <span className="var-value">AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=</span>
-            </div>
+            
             <div className="env-variable">
               <span className="var-name">AWS_REGION</span>
               <span className="var-value">us-east-1</span>
@@ -294,17 +308,24 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
   <div className="config-details-section">
     <h5>DynamoDB Configuration</h5>
     <ul>
-      <li><strong>AWS_ACCESS_KEY_ID</strong>: Your AWS access key for authentication</li>
-      <li><strong>AWS_SECRET_ACCESS_KEY</strong>: Your AWS secret access key</li>
-      <li><strong>AWS_SESSION_TOKEN</strong>: Temporary session token (if using temporary credentials)</li>
+      <li><strong>AWS_ACCESS_KEY_ID</strong>: Your AWS access key for authentication (Method 1)</li>
+      <li><strong>AWS_SECRET_ACCESS_KEY</strong>: Your AWS secret access key (Method 1)</li>
+      <li><strong>AWS_SESSION_TOKEN</strong>: Temporary session token (Method 1, if using temporary credentials)</li>
+      <li><strong>AWS_COGNITO_IDENTITY</strong>: Your Cognito Identity Pool ID (Method 2, alternative to credentials)</li>
       <li><strong>AWS_REGION</strong>: AWS region where your DynamoDB table is located</li>
       <li><strong>DYNAMODB_TABLE_NAME</strong>: Name of the DynamoDB table to store ElsaiARMS data</li>
+    </ul>
+    
+    <h6>Authentication Methods:</h6>
+    <ul>
+      <li><strong>Method 1:</strong> Use AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and optionally AWS_SESSION_TOKEN</li>
+      <li><strong>Method 2:</strong> Use AWS_COGNITO_IDENTITY for Cognito-based authentication</li>
     </ul>
     
     <h6>Example DynamoDB configurations:</h6>
     
     <div className="config-example">
-      <h6>Standard AWS Credentials:</h6>
+      <h6>Standard AWS Credentials (Method 1):</h6>
       <div className="code-block">
         <code>AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE</code><br/>
         <code>AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code><br/>
@@ -314,11 +335,20 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
     </div>
     
     <div className="config-example">
-      <h6>With Session Token (for temporary credentials):</h6>
+      <h6>With Session Token (Method 1, for temporary credentials):</h6>
       <div className="code-block">
         <code>AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE</code><br/>
         <code>AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code><br/>
         <code>AWS_SESSION_TOKEN=AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=</code><br/>
+        <code>AWS_REGION=us-east-1</code><br/>
+        <code>DYNAMODB_TABLE_NAME=arms-metrics</code>
+      </div>
+    </div>
+    
+    <div className="config-example">
+      <h6>Cognito Identity (Method 2):</h6>
+      <div className="code-block">
+        <code>AWS_COGNITO_IDENTITY=us-east-1:12345678-1234-1234-1234-123456789012</code><br/>
         <code>AWS_REGION=us-east-1</code><br/>
         <code>DYNAMODB_TABLE_NAME=arms-metrics</code>
       </div>
@@ -398,9 +428,14 @@ MONGO_URI=mongodb://localhost:27017
 MONGO_DB_NAME=arms-metrics
 
 # OR DynamoDB Configuration (choose one)
+# Method 1: AWS Credentials
 AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 AWS_SESSION_TOKEN=AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=
+
+# Method 2: Cognito Identity
+# AWS_COGNITO_IDENTITY=us-east-1:12345678-1234-1234-1234-123456789012
+
 AWS_REGION=us-east-1
 DYNAMODB_TABLE_NAME=arms-metrics
 ```
@@ -544,6 +579,27 @@ For detailed setup instructions, see the [Installation Guide](./installation.md)
     font-size: 0.85rem;
     color: #6c757d;
     font-style: italic;
+  }
+
+  .auth-note {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.75rem;
+  }
+
+  .auth-method {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .auth-method h6 {
+    margin: 0 0 0.75rem 0;
+    color: #495057;
+    font-size: 1.05rem;
+    font-weight: 600;
   }
 
   /* App Components Styling */

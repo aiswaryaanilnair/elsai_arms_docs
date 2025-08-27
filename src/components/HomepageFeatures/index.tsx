@@ -167,8 +167,14 @@ function HeroSection(): ReactNode {
           <div className={styles.heroButtons}>
             <a
               className="button button--secondary button--lg"
-              href="/documentation/docs/intro">
-              Documentation
+              href="/documentation/sdk/intro">
+              SDK
+            </a>
+            <a
+              className="button button--secondary button--lg"
+              href="/documentation/saas/intro"
+              style={{ marginLeft: '1rem' }}>
+              SAAS
             </a>
           </div>
         </div>
