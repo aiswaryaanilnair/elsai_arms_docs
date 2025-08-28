@@ -48,7 +48,7 @@ Before installing ElsaiARMS, ensure you have:
 import InstallationTabs from '@site/src/components/InstallationTabs';
 
 <InstallationTabs 
-  command="pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms/ elsai-arms==1.0.1"
+  command="Contact us for setting up SDK"
 />
 
 This installs the latest version of the `elsai-arms` package from your private PyPI repository.

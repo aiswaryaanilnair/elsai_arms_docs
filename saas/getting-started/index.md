@@ -37,7 +37,7 @@ sidebar_position: 1
       </svg>
     </div>
     <p className="feature-text">
-      <em>Ready to bring order to your AI ecosystem? <a href="#" className="cta-link">Contact us</a> to schedule a demonstration of how ElsaiARMS can transform your AI governance and monitoring capabilities.</em>
+      <em>Ready to bring order to your AI ecosystem? <a href="mailto:support@elsaifoundry.ai?subject=ElsaiARMS%20Demo%20Request" className="cta-link">Contact us</a> to schedule a demonstration of how ElsaiARMS can transform your AI governance and monitoring capabilities.</em>
     </p>
   </div>
 </div>
