@@ -2,14 +2,11 @@
 sidebar_position: 4
 ---
 
+import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
+
 # Tutorial
 
 ## Usage Example
-#### Installation
-```bash
-!pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms/ elsai-arms==1.0.1
-```
-
 #### Sample Code
 ```python
 from elsai_arms.elsai_arms import ElsaiARMS
@@ -72,9 +69,7 @@ except Exception as e:
     <div className="step-number">1</div>
     <div className="step-content">
       <div className="step-title">Initialize Elsai ARMS in the application</div>
-      <div className="step-code">
-        <code>arms = ElsaiARMS("Project_Name")</code>
-      </div>
+      <StyledCodeBlock code="arms = ElsaiARMS('Project_Name')" />
     </div>
   </div>
 
@@ -103,9 +98,7 @@ except Exception as e:
     <div className="step-number">5</div>
     <div className="step-content">
       <div className="step-title">To automatically capture LLM-specific metrics</div>
-      <div className="step-code">
-        <code>arms.monitor_llm_call()</code>
-      </div>
+      <StyledCodeBlock code="arms.monitor_llm_call()" />
     </div>
   </div>
 
@@ -113,9 +106,7 @@ except Exception as e:
     <div className="step-number">6</div>
     <div className="step-content">
       <div className="step-title">To capture OCR metrics</div>
-      <div className="step-code">
-        <code>arms.monitor_ocr_call("OCR_name")</code>
-      </div>
+      <StyledCodeBlock code="arms.monitor_ocr_call('OCR_name')" />
     </div>
   </div>
 
@@ -123,9 +114,7 @@ except Exception as e:
     <div className="step-number">7</div>
     <div className="step-content">
       <div className="step-title">To monitor RAG performance</div>
-      <div className="step-code">
-        <code>arms.monitor_rag_call()</code>
-      </div>
+      <StyledCodeBlock code="arms.monitor_rag_call()" />
     </div>
   </div>
 
@@ -133,9 +122,7 @@ except Exception as e:
     <div className="step-number">8</div>
     <div className="step-content">
       <div className="step-title">To monitor embedding metrics</div>
-      <div className="step-code">
-        <code>arms.monitor_embedding_call()</code>
-      </div>
+      <StyledCodeBlock code="arms.monitor_embedding_call()" />
     </div>
   </div>
 
@@ -143,9 +130,7 @@ except Exception as e:
     <div className="step-number">9</div>
     <div className="step-content">
       <div className="step-title">To monitor agent metrics</div>
-      <div className="step-code">
-        <code>arms.monitor_agent_call("Agent Name", components=[List of components])</code>
-      </div>
+      <StyledCodeBlock code="arms.monitor_agent_call('Agent Name', components=[List of components])" />
     </div>
   </div>
 
@@ -153,9 +138,7 @@ except Exception as e:
     <div className="step-number">10</div>
     <div className="step-content">
       <div className="step-title">To log custom metrics</div>
-      <div className="step-code">
-        <code>arms.log_custom_metric("Metric Name", metric_value)</code>
-      </div>
+      <StyledCodeBlock code="arms.log_custom_metric('Metric Name', metric_value)" />
     </div>
   </div>
 
@@ -163,9 +146,7 @@ except Exception as e:
     <div className="step-number">11</div>
     <div className="step-content">
       <div className="step-title">To log operation</div>
-      <div className="step-code">
-        <code>arms.info("Log Operation")</code>
-      </div>
+      <StyledCodeBlock code="arms.info('Log Operation')" />
     </div>
   </div>
 
@@ -173,9 +154,7 @@ except Exception as e:
     <div className="step-number">12</div>
     <div className="step-content">
       <div className="step-title">To log warning</div>
-      <div className="step-code">
-        <code>arms.warning("Log Warning")</code>
-      </div>
+      <StyledCodeBlock code="arms.warning('Log Warning')" />
     </div>
   </div>
 
@@ -183,9 +162,7 @@ except Exception as e:
     <div className="step-number">13</div>
     <div className="step-content">
       <div className="step-title">To log errors</div>
-      <div className="step-code">
-        <code>arms.error("Log Error")</code>
-      </div>
+      <StyledCodeBlock code="arms.error('Log Error')" />
     </div>
   </div>
 
@@ -193,9 +170,7 @@ except Exception as e:
     <div className="step-number">14</div>
     <div className="step-content">
       <div className="step-title">Once metrics are logged, the exporter module is used to export logs in JSON format. To export data</div>
-      <div className="step-code">
-        <code>arms.export()</code>
-      </div>
+      <StyledCodeBlock code="arms.export()" />
     </div>
   </div>
 
@@ -203,9 +178,7 @@ except Exception as e:
     <div className="step-number">15</div>
     <div className="step-content">
       <div className="step-title">Once the run is done, the project manager saves the run details and the project details are stored in MongoDB. To end run</div>
-      <div className="step-code">
-        <code>arms.end_run()</code>
-      </div>
+      <StyledCodeBlock code="arms.end_run()" />
     </div>
   </div>
 </div>
@@ -264,23 +237,7 @@ except Exception as e:
     margin-bottom: 0.75rem;
   }
 
-  .step-code {
-    background: #f7fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 0.875rem 1rem;
-    margin-top: 0.5rem;
-  }
 
-  .step-code code {
-    color: #2d3748;
-    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-    font-size: 0.95rem;
-    font-weight: 500;
-    background: transparent;
-    padding: 0;
-    border-radius: 0;
-  }
 
   /* Dark theme adjustments */
   [data-theme='dark'] .step-item {
@@ -297,14 +254,7 @@ except Exception as e:
     color: #e2e8f0;
   }
 
-  [data-theme='dark'] .step-code {
-    background: #2d3748;
-    border-color: #4a5568;
-  }
 
-  [data-theme='dark'] .step-code code {
-    color: #e2e8f0;
-  }
 
   /* Responsive design */
   @media (max-width: 768px) {
@@ -328,13 +278,7 @@ except Exception as e:
       font-size: 1rem;
     }
 
-    .step-code {
-      padding: 0.75rem;
-    }
 
-    .step-code code {
-      font-size: 0.9rem;
-    }
   }
 
   @media (max-width: 480px) {

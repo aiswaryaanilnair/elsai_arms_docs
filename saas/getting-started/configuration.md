@@ -6,6 +6,7 @@ sidebar_position: 3
 ---
 
 import ConfigDetailsDropdown from '@site/src/components/ConfigDetailsDropdown';
+import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
 # Configuration
 
@@ -56,9 +57,7 @@ ElsaiARMS SaaS is designed to be simple to configure and deploy. With just one r
       <h5>Set Environment Variable</h5>
       <div className="step-description">
         <p>Configure your API key in your environment:</p>
-        <div className="code-block">
-          <code>export ELSAI_ARMS_API_KEY=your-api-key-here</code>
-        </div>
+        <StyledCodeBlock code="export ELSAI_ARMS_API_KEY=your-api-key-here" />
       </div>
     </div>
   </div>
@@ -69,9 +68,7 @@ ElsaiARMS SaaS is designed to be simple to configure and deploy. With just one r
       <h5>Access Dashboard</h5>
       <div className="step-description">
         <p>Log into your cloud dashboard at:</p>
-        <div className="code-block">
-          <code>https://arms.elsaifoundry.ai/dashboard</code>
-        </div>
+        <StyledCodeBlock code="https://arms.elsaifoundry.ai/dashboard" />
       </div>
     </div>
   </div>
@@ -183,13 +180,11 @@ ElsaiARMS SaaS is designed to be simple to configure and deploy. With just one r
 
 Set your API key in your environment:
 
-```bash
-# Set your ElsaiARMS API key
+<StyledCodeBlock code={`# Set your ElsaiARMS API key
 export ELSAI_ARMS_API_KEY=your-api-key-here
 
 # Or add to your .env file
-echo "ELSAI_ARMS_API_KEY=your-api-key-here" >> .env
-```
+echo "ELSAI_ARMS_API_KEY=your-api-key-here" >> .env`} />
 
 ## Next Steps
 
@@ -443,21 +438,7 @@ For installation instructions, see the [Installation Guide](./installation).
     line-height: 1.5;
   }
 
-  .code-block {
-    background: #2d3748;
-    border: 1px solid #4a5568;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 0;
-  }
 
-  .code-block code {
-    color: #60a5fa;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    font-weight: 600;
-  }
 
   /* Dashboard Features */
   .dashboard-features {

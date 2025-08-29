@@ -1,6 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
+
+import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
 # User Guide
 
@@ -62,18 +64,14 @@ sidebar_position: 3
   <div className="code-header">
     <h4>Import the Library</h4>
   </div>
-  <div className="code-block">
-    <code>from elsai_arms.elsai_arms import ElsaiARMS</code>
-  </div>
+  <StyledCodeBlock code="from elsai_arms.elsai_arms import ElsaiARMS" />
 </div>
 
 <div className="code-section">
   <div className="code-header">
     <h4>Initialize ARMS</h4>
   </div>
-  <div className="code-block">
-    <code>arms = ElsaiARMS("project_name")</code>
-  </div>
+  <StyledCodeBlock code="arms = ElsaiARMS('project_name')" />
   <div className="code-description">
     <p>This sets up the monitoring environment for a new or existing project. It will:</p>
     <ul>
@@ -157,9 +155,9 @@ sidebar_position: 3
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <div className="code-block">
-      <code>@arms.monitor_llm_call<br/>def get_response(prompt: str):<br/>&nbsp;&nbsp;&nbsp;&nbsp;return llm.invoke(prompt)</code>
-    </div>
+    <StyledCodeBlock code={`@arms.monitor_llm_call
+def get_response(prompt: str):
+    return llm.invoke(prompt)`} />
   </div>
 </div>
 
@@ -227,9 +225,9 @@ sidebar_position: 3
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <div className="code-block">
-      <code>@arms.monitor_ocr_call("OCR_name")<br/>def extract_text(image_path: str):<br/>&nbsp;&nbsp;&nbsp;&nbsp;return ocr_model.extract(image_path)</code>
-    </div>
+    <StyledCodeBlock code={`@arms.monitor_ocr_call("OCR_name")
+def extract_text(image_path: str):
+    return ocr_model.extract(image_path)`} />
   </div>
 </div>
 
@@ -281,9 +279,9 @@ sidebar_position: 3
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <div className="code-block">
-      <code>@arms.monitor_rag_call<br/>def retrieve_documents(query: str):<br/>&nbsp;&nbsp;&nbsp;&nbsp;return rag_system.search(query)</code>
-    </div>
+    <StyledCodeBlock code={`@arms.monitor_rag_call
+def retrieve_documents(query: str):
+    return rag_system.search(query)`} />
   </div>
 </div>
 
@@ -333,9 +331,9 @@ sidebar_position: 3
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <div className="code-block">
-      <code>@arms.monitor_embedding_call<br/>def get_embedding(text: str):<br/>&nbsp;&nbsp;&nbsp;&nbsp;return embedding_model.encode(text)</code>
-    </div>
+    <StyledCodeBlock code={`@arms.monitor_embedding_call
+def get_embedding(text: str):
+    return embedding_model.encode(text)`} />
   </div>
 </div>
 
@@ -375,9 +373,12 @@ sidebar_position: 3
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <div className="code-block">
-      <code>@arms.monitor_agent_call("Agent_Name", components=["ocr", "embedding", "llm"])<br/>def process_document(image_path: str):<br/>&nbsp;&nbsp;&nbsp;&nbsp;text = extract_text(image_path)<br/>&nbsp;&nbsp;&nbsp;&nbsp;embedding = get_embedding(text)<br/>&nbsp;&nbsp;&nbsp;&nbsp;response = get_response(text)<br/>&nbsp;&nbsp;&nbsp;&nbsp;return response</code>
-    </div>
+    <StyledCodeBlock code={`@arms.monitor_agent_call("Agent_Name", components=["ocr", "embedding", "llm"])
+def process_document(image_path: str):
+    text = extract_text(image_path)
+    embedding = get_embedding(text)
+    response = get_response(text)
+    return response`} />
   </div>
 </div>
 
@@ -388,9 +389,7 @@ sidebar_position: 3
 <div className="feature-section">
   <h4>Log Domain-Specific Metrics</h4>
   <p>Track custom business metrics and internal KPIs as key-value pairs.</p>
-  <div className="code-block">
-    <code>arms.log_custom_metric("Metric Name", metric_value)</code>
-  </div>
+  <StyledCodeBlock code="arms.log_custom_metric('Metric Name', metric_value)" />
 </div>
 
 ### Built-in Logging
@@ -402,23 +401,17 @@ sidebar_position: 3
   <div className="logging-examples">
     <div className="log-example">
       <h6>Info Logs</h6>
-      <div className="code-block">
-        <code>arms.info("Log Operation")</code>
-      </div>
+      <StyledCodeBlock code="arms.info('Log Operation')" />
     </div>
     
     <div className="log-example">
       <h6>Warning Logs</h6>
-      <div className="code-block">
-        <code>arms.warning("Log Warning")</code>
-      </div>
+      <StyledCodeBlock code="arms.warning('Log Warning')" />
     </div>
 
     <div className="log-example">
       <h6>Error Logs</h6>
-      <div className="code-block">
-        <code>arms.error("Log Error")</code>
-      </div>
+      <StyledCodeBlock code="arms.error('Log Error')" />
     </div>
   </div>
 </div>
@@ -428,9 +421,7 @@ sidebar_position: 3
 <div className="feature-section">
   <h4>Export Monitoring Data</h4>
   <p>Export comprehensive project data for analysis, reporting, or integration with external systems.</p>
-  <div className="code-block">
-    <code>arms.export()</code>
-  </div>
+  <StyledCodeBlock code="arms.export()" />
 </div>
 
 ### Session Management
@@ -438,9 +429,7 @@ sidebar_position: 3
 <div className="feature-section">
   <h4>End Project Session</h4>
   <p>Finalize and complete your monitoring session for successful project runs.</p>
-  <div className="code-block">
-    <code>arms.end_run()</code>
-  </div>
+  <StyledCodeBlock code="arms.end_run()" />
 </div>
 
 <style>{`
@@ -556,20 +545,7 @@ sidebar_position: 3
     font-weight: 600;
   }
 
-  .code-block {
-    background: #2d3748;
-    padding: 1.5rem;
-    margin: 0;
-    border-radius: 0 0 12px 12px;
-  }
 
-  .code-block code {
-    color: #60a5fa;
-    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    font-weight: 500;
-  }
 
   .code-description {
     padding: 1.5rem;

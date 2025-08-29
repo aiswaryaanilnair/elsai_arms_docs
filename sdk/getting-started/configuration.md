@@ -6,6 +6,7 @@ sidebar_position: 3
 ---
 
 import ConfigDetailsDropdown from '@site/src/components/ConfigDetailsDropdown';
+import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
 # Configuration
 
@@ -175,9 +176,7 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
       <h5>Start the Backend</h5>
       <div className="step-description">
         <p>Run the FastAPI backend server:</p>
-        <div className="code-block">
-          <code>python app.py</code>
-        </div>
+        <StyledCodeBlock code="python app.py" />
       </div>
     </div>
   </div>
@@ -188,9 +187,7 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
       <h5>Start the Frontend</h5>
       <div className="step-description">
         <p>In a new terminal, start the React dashboard:</p>
-        <div className="code-block">
-          <code>npm start</code>
-        </div>
+        <StyledCodeBlock code="npm start" />
       </div>
     </div>
   </div>
@@ -201,9 +198,7 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
       <h5>Access Dashboard</h5>
       <div className="step-description">
         <p>Open your browser and navigate to:</p>
-        <div className="code-block">
-          <code>http://localhost:3000</code>
-        </div>
+        <StyledCodeBlock code="http://localhost:3000" />
       </div>
     </div>
   </div>
@@ -282,26 +277,20 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
     
     <div className="config-example">
       <h6>Local MongoDB:</h6>
-      <div className="code-block">
-        <code>MONGO_URI=mongodb://localhost:27017</code><br/>
-        <code>MONGO_DB_NAME=elsai_arms_db</code>
-      </div>
+      <StyledCodeBlock code={`MONGO_URI=mongodb://localhost:27017
+MONGO_DB_NAME=elsai_arms_db`} />
     </div>
     
     <div className="config-example">
       <h6>MongoDB Atlas (Cloud):</h6>
-      <div className="code-block">
-        <code>MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority</code><br/>
-        <code>MONGO_DB_NAME=elsai_arms_db</code>
-      </div>
+      <StyledCodeBlock code={`MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority
+MONGO_DB_NAME=elsai_arms_db`} />
     </div>
     
     <div className="config-example">
       <h6>Docker MongoDB:</h6>
-      <div className="code-block">
-        <code>MONGO_URI=mongodb://mongodb:27017</code><br/>
-        <code>MONGO_DB_NAME=elsai_arms_db</code>
-      </div>
+      <StyledCodeBlock code={`MONGO_URI=mongodb://mongodb:27017
+MONGO_DB_NAME=elsai_arms_db`} />
     </div>
   </div>
 
@@ -326,32 +315,26 @@ ElsaiARMS supports both MongoDB and DynamoDB as database backends, giving you fl
     
     <div className="config-example">
       <h6>Standard AWS Credentials (Method 1):</h6>
-      <div className="code-block">
-        <code>AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE</code><br/>
-        <code>AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code><br/>
-        <code>AWS_REGION=us-east-1</code><br/>
-        <code>DYNAMODB_TABLE_NAME=arms-metrics</code>
-      </div>
+      <StyledCodeBlock code={`AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+AWS_REGION=us-east-1
+DYNAMODB_TABLE_NAME=arms-metrics`} />
     </div>
     
     <div className="config-example">
       <h6>With Session Token (Method 1, for temporary credentials):</h6>
-      <div className="code-block">
-        <code>AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE</code><br/>
-        <code>AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code><br/>
-        <code>AWS_SESSION_TOKEN=AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=</code><br/>
-        <code>AWS_REGION=us-east-1</code><br/>
-        <code>DYNAMODB_TABLE_NAME=arms-metrics</code>
-      </div>
+      <StyledCodeBlock code={`AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+AWS_SESSION_TOKEN=AQoEXAMPLEH4aoAH0gNCAPyJxz4BlCFFxWNE2OPTk=
+AWS_REGION=us-east-1
+DYNAMODB_TABLE_NAME=arms-metrics`} />
     </div>
     
     <div className="config-example">
       <h6>Cognito Identity (Method 2):</h6>
-      <div className="code-block">
-        <code>AWS_COGNITO_IDENTITY=us-east-1:12345678-1234-1234-1234-123456789012</code><br/>
-        <code>AWS_REGION=us-east-1</code><br/>
-        <code>DYNAMODB_TABLE_NAME=arms-metrics</code>
-      </div>
+      <StyledCodeBlock code={`AWS_COGNITO_IDENTITY=us-east-1:12345678-1234-1234-1234-123456789012
+AWS_REGION=us-east-1
+DYNAMODB_TABLE_NAME=arms-metrics`} />
     </div>
   </div>
 </ConfigDetailsDropdown>
