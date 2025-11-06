@@ -12,33 +12,9 @@ import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
 ElsaiARMS SaaS is designed to be simple to configure and deploy. With just one required environment variable, you can get started monitoring your AI applications in minutes.
 
-## Required Configuration
+## Quick Start
 
-<div className="config-container">
-  <div className="config-section">
-    <div className="config-header">
-      <div className="config-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </div>
-      <h4>ElsaiARMS API Key</h4>
-      <div className="config-badge">Required</div>
-    </div>
-    <div className="config-content">
-      <p>Your SaaS deployment requires only one environment variable:</p>
-      <div className="env-variable">
-        <span className="var-name">ELSAI_ARMS_API_KEY</span>
-        <span className="var-value">arms-1234567890abcdef</span>
-      </div>
-      <p className="config-note">This API key authenticates your application with ElsaiARMS cloud services and provides access to all monitoring features.</p>
-    </div>
-  </div>
-</div>
-
-### Quick Start
+Follow these four simple steps to configure ElsaiARMS SaaS:
 
 <div className="quick-start">
   <div className="start-step">
@@ -65,16 +41,62 @@ ElsaiARMS SaaS is designed to be simple to configure and deploy. With just one r
   <div className="start-step">
     <div className="step-number">3</div>
     <div className="step-content">
-      <h5>Access Dashboard</h5>
+      <h5>Integrate ARMS into Code</h5>
       <div className="step-description">
-        <p>Log into your cloud dashboard at:</p>
-        <StyledCodeBlock code="https://arms.elsaifoundry.ai/dashboard" />
+        <p>Learn how to integrate ElsaiARMS into your AI applications:</p>
+        <div className="step-links">
+          <div className="link-item">
+            <a href="../user_guide" className="step-link">View User Guide →</a>
+            <span className="link-description">Detailed explanations for each feature</span>
+          </div>
+          <div className="link-item">
+            <a href="../tutorial" className="step-link">View Tutorial →</a>
+            <span className="link-description">Sample code examples</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div className="start-step">
+    <div className="step-number">4</div>
+    <div className="step-content">
+      <h5>View Analytics in Dashboard</h5>
+      <div className="step-description">
+        <p>Access your cloud dashboard to view real-time monitoring data, analytics, and performance insights:</p>
+        <a href="https://arms.elsaifoundry.ai/dashboard" target="_blank" className="step-link">Open Dashboard →</a>
       </div>
     </div>
   </div>
 </div>
 
-### Dashboard Features
+## Required Configuration
+
+<div className="config-container">
+  <div className="config-section">
+    <div className="config-header">
+      <div className="config-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <h4>ElsaiARMS API Key</h4>
+      <div className="config-badge">Required</div>
+    </div>
+    <div className="config-content">
+      <p>Your SaaS deployment requires only one environment variable:</p>
+      <div className="env-variable">
+        <span className="var-name">ELSAI_ARMS_API_KEY</span>
+        <span className="var-value">arms-1234567890abcdef</span>
+      </div>
+      <p className="config-note">This API key authenticates your application with ElsaiARMS cloud services and provides access to all monitoring features.</p>
+    </div>
+  </div>
+</div>
+
+## Dashboard Features
 
 <div className="dashboard-features">
   <div className="feature-grid">
@@ -125,73 +147,13 @@ ElsaiARMS SaaS is designed to be simple to configure and deploy. With just one r
 </div>
 
 
-## SaaS Architecture
-
-<div className="app-components">
-  <div className="component-section">
-    <div className="component-header">
-      <div className="component-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </div>
-      <h4>Cloud-Hosted Dashboard</h4>
-      <div className="component-badge">SaaS</div>
-    </div>
-    <div className="component-content">
-      <p>A fully managed, cloud-hosted dashboard that provides real-time monitoring, analytics, and management capabilities for your AI applications.</p>
-      
-      <div className="feature-list">
-        <div className="feature-item">Real-time Metrics</div>
-        <div className="feature-item">Interactive Charts</div>
-        <div className="feature-item">User Management</div>
-        <div className="feature-item">Project Analytics</div>
-      </div>
-    </div>
-  </div>
-
-  <div className="component-section">
-    <div className="component-header">
-      <div className="component-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </div>
-      <h4>Business Intelligence & Analytics</h4>
-      <div className="component-badge">Insights</div>
-    </div>
-    <div className="component-content">
-      <p>Advanced analytics and reporting tools that provide actionable insights into your AI operations, helping you make data-driven decisions and optimize performance.</p>
-      
-      <div className="feature-list">
-        <div className="feature-item">Performance Metrics</div>
-        <div className="feature-item">Cost Analysis</div>
-        <div className="feature-item">Usage Trends</div>
-        <div className="feature-item">Alert Management</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-## Environment Variables
-
-Set your API key in your environment:
-
-<StyledCodeBlock code={`# Set your ElsaiARMS API key
-export ELSAI_ARMS_API_KEY=your-api-key-here
-
-# Or add to your .env file
-echo "ELSAI_ARMS_API_KEY=your-api-key-here" >> .env`} />
-
 ## Next Steps
 
-1. **Sign up for ElsaiARMS** to get your API key
-2. **Set your environment variable** with the API key
-3. **Access your cloud dashboard** at https://arms.elsaifoundry.ai/dashboard
-4. **Start monitoring** your AI applications immediately
+Now that you've configured ElsaiARMS SaaS, you're ready to start monitoring your AI applications:
+
+- **Learn how to use your API key** - Check out the [User Guide](../user_guide) for detailed explanations of all features
+- **See it in action** - Follow the [Tutorial](../tutorial) for sample code examples
+- **View your dashboard** - Access your cloud dashboard at [https://arms.elsaifoundry.ai/dashboard](https://arms.elsaifoundry.ai/dashboard) to see real-time monitoring data
 
 For installation instructions, see the [Installation Guide](./installation).
 
@@ -385,7 +347,11 @@ For installation instructions, see the [Installation Guide](./installation).
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border-radius: 16px;
+    border: 1px solid #e1e5e9;
   }
 
   .start-step {
@@ -393,7 +359,7 @@ For installation instructions, see the [Installation Guide](./installation).
     gap: 1.25rem;
     align-items: flex-start;
     background: white;
-    border: 1px solid #e1e5e9;
+    border: 2px solid #e1e5e9;
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -438,7 +404,43 @@ For installation instructions, see the [Installation Guide](./installation).
     line-height: 1.5;
   }
 
+  .step-link {
+    display: inline-block;
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--ifm-color-primary);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
 
+  .step-link:hover {
+    background: var(--ifm-color-primary);
+    color: white;
+  }
+
+  .step-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+
+  .link-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .link-description {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 0.25rem;
+  }
 
   /* Dashboard Features */
   .dashboard-features {
@@ -573,8 +575,22 @@ For installation instructions, see the [Installation Guide](./installation).
     color: #d1d5db;
   }
 
+  [data-theme='dark'] .quick-start {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-color: #4a5568;
+  }
+
+  [data-theme='dark'] .link-description {
+    color: #9ca3af;
+  }
+
   /* Responsive design */
   @media (max-width: 768px) {
+    .quick-start {
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
     .config-section,
     .component-section,
     .start-step,
@@ -582,6 +598,22 @@ For installation instructions, see the [Installation Guide](./installation).
     .customization-item {
       padding: 1.25rem;
       margin-bottom: 1rem;
+    }
+
+    .step-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+    }
+
+    .link-item {
+      width: 100%;
+      min-width: unset;
+    }
+
+    .step-link {
+      width: 100%;
+      text-align: center;
     }
 
     .config-header,

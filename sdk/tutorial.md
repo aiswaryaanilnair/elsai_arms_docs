@@ -98,44 +98,57 @@ except Exception as e:
     <div className="step-number">5</div>
     <div className="step-content">
       <div className="step-title">To automatically capture LLM-specific metrics</div>
-      <StyledCodeBlock code="arms.monitor_llm_call()" />
+      <StyledCodeBlock code="@arms.monitor_llm_call" />
     </div>
   </div>
 
   <div className="step-item">
     <div className="step-number">6</div>
     <div className="step-content">
-      <div className="step-title">To capture OCR metrics</div>
-      <StyledCodeBlock code="arms.monitor_ocr_call('OCR_name')" />
+      <div className="step-title">To monitor async streaming LLM calls</div>
+      <StyledCodeBlock code={`@arms.monitor_llm_astream
+async def run_astream(prompt, llm):
+    return llm.astream_events([HumanMessage(content=prompt)])`} />
     </div>
   </div>
 
   <div className="step-item">
     <div className="step-number">7</div>
     <div className="step-content">
-      <div className="step-title">To monitor RAG performance</div>
-      <StyledCodeBlock code="arms.monitor_rag_call()" />
+      <div className="step-title">To capture OCR metrics</div>
+      <StyledCodeBlock code="@arms.monitor_ocr_call" />
     </div>
   </div>
 
   <div className="step-item">
     <div className="step-number">8</div>
     <div className="step-content">
-      <div className="step-title">To monitor embedding metrics</div>
-      <StyledCodeBlock code="arms.monitor_embedding_call()" />
+      <div className="step-title">To monitor RAG performance</div>
+      <StyledCodeBlock code="@arms.monitor_rag_call" />
     </div>
   </div>
 
   <div className="step-item">
     <div className="step-number">9</div>
     <div className="step-content">
-      <div className="step-title">To monitor agent metrics</div>
-      <StyledCodeBlock code="arms.monitor_agent_call('Agent Name', components=[List of components])" />
+      <div className="step-title">To monitor embedding metrics</div>
+      <StyledCodeBlock code="@arms.monitor_embedding_call" />
     </div>
   </div>
 
   <div className="step-item">
     <div className="step-number">10</div>
+    <div className="step-content">
+      <div className="step-title">To monitor LangChain agents and graphs</div>
+      <StyledCodeBlock code={`graph.invoke(
+    {"messages": messages},
+    config={"callbacks": [arms.langchain_callback]}
+)`} />
+    </div>
+  </div>
+
+  <div className="step-item">
+    <div className="step-number">11</div>
     <div className="step-content">
       <div className="step-title">To log custom metrics</div>
       <StyledCodeBlock code="arms.log_custom_metric('Metric Name', metric_value)" />
@@ -143,7 +156,7 @@ except Exception as e:
   </div>
 
   <div className="step-item">
-    <div className="step-number">11</div>
+    <div className="step-number">12</div>
     <div className="step-content">
       <div className="step-title">To log operation</div>
       <StyledCodeBlock code="arms.info('Log Operation')" />
@@ -151,7 +164,7 @@ except Exception as e:
   </div>
 
   <div className="step-item">
-    <div className="step-number">12</div>
+    <div className="step-number">13</div>
     <div className="step-content">
       <div className="step-title">To log warning</div>
       <StyledCodeBlock code="arms.warning('Log Warning')" />
@@ -159,7 +172,7 @@ except Exception as e:
   </div>
 
   <div className="step-item">
-    <div className="step-number">13</div>
+    <div className="step-number">14</div>
     <div className="step-content">
       <div className="step-title">To log errors</div>
       <StyledCodeBlock code="arms.error('Log Error')" />
@@ -167,7 +180,7 @@ except Exception as e:
   </div>
 
   <div className="step-item">
-    <div className="step-number">14</div>
+    <div className="step-number">15</div>
     <div className="step-content">
       <div className="step-title">Once metrics are logged, the exporter module is used to export logs in JSON format. To export data</div>
       <StyledCodeBlock code="arms.export()" />
@@ -175,7 +188,7 @@ except Exception as e:
   </div>
 
   <div className="step-item">
-    <div className="step-number">15</div>
+    <div className="step-number">16</div>
     <div className="step-content">
       <div className="step-title">Once the run is done, the project manager saves the run details and the project details are stored in MongoDB. To end run</div>
       <StyledCodeBlock code="arms.end_run()" />

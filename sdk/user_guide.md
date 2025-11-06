@@ -116,6 +116,24 @@ import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 def get_response(prompt: str):
     return llm.invoke(prompt)`} />
   </div>
+
+  <div className="usage-example">
+    <h5>Streaming LLM Monitoring</h5>
+    <p>For async streaming LLM calls, use the <code>monitor_llm_astream</code> decorator:</p>
+    <StyledCodeBlock code={`from langchain_core.messages import HumanMessage
+from langchain_openai import ChatOpenAI
+
+async def main():
+    @arms.monitor_llm_astream
+    async def run_astream(prompt, llm):
+        return llm.astream_events([HumanMessage(content=prompt)])
+
+    llm = ChatOpenAI(model="gpt-4o-mini", streaming=True)
+
+    async for event in run_astream("Explain quantum computing in simple terms.", llm=llm):
+        if event["event"] == "on_chat_model_stream":
+            print(event["data"]["chunk"].content, end="", flush=True)`} />
+  </div>
 </div>
 
 ### OCR Monitoring
@@ -299,7 +317,7 @@ def get_embedding(text: str):
 <div className="monitoring-section">
   <div className="section-header">
     <h3>Agent Operation Monitoring</h3>
-    <p>Track multi-component execution, overall performance, and error handling across your AI agents.</p>
+    <p>Monitor LangChain agents and graphs by adding the ElsaiARMS callback to track agent execution, tool usage, and overall performance.</p>
   </div>
   
   <div className="metrics-grid">
@@ -307,7 +325,8 @@ def get_embedding(text: str):
       <h5>Agent Information</h5>
       <div className="metric-list">
         <span className="metric-tag">Agent Name</span>
-        <span className="metric-tag">Components Used</span>
+        <span className="metric-tag">Tool Calls</span>
+        <span className="metric-tag">Execution Steps</span>
       </div>
     </div>
     
@@ -317,25 +336,34 @@ def get_embedding(text: str):
         <span className="metric-tag">Timestamp</span>
         <span className="metric-tag">Status</span>
         <span className="metric-tag">Latency</span>
+        <span className="metric-tag">Total Tokens</span>
       </div>
     </div>
     
     <div className="metric-category">
-      <h5>Error Handling</h5>
+      <h5>LLM Interactions</h5>
       <div className="metric-list">
-        <span className="metric-tag">Error Details</span>
+        <span className="metric-tag">LLM Calls</span>
+        <span className="metric-tag">Token Usage</span>
+        <span className="metric-tag">Cost</span>
       </div>
     </div>
   </div>
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <StyledCodeBlock code={`@arms.monitor_agent_call("Agent_Name", components=["ocr", "embedding", "llm"])
-def process_document(image_path: str):
-    text = extract_text(image_path)
-    embedding = get_embedding(text)
-    response = get_response(text)
-    return response`} />
+    <StyledCodeBlock code={`from langchain_core.messages import HumanMessage
+from langgraph.graph import StateGraph
+
+# Initialize your LangChain graph
+graph = StateGraph(...)
+
+# Invoke the graph with ElsaiARMS callback
+messages = [HumanMessage(content="Your query here")]
+result = graph.invoke(
+    {"messages": messages},
+    config={"callbacks": [arms.langchain_callback]}
+)`} />
   </div>
 </div>
 

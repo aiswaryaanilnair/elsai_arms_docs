@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
@@ -52,6 +52,29 @@ import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
     <div className="step-content">
       <h4>View dashboard</h4>
       <p>Monitor your AI operations</p>
+    </div>
+  </div>
+</div>
+
+<div className="tutorial-links-box">
+  <div className="tutorial-links-content">
+    <h4>Want to see sample code?</h4>
+    <p>Check out our tutorials for practical examples:</p>
+    <div className="tutorial-links">
+      <a href="./tutorial" className="tutorial-link">
+        <span className="link-icon">📖</span>
+        <div className="link-text">
+          <strong>Tutorial</strong>
+          <span>Sample code examples</span>
+        </div>
+      </a>
+      <a href="./agent_monitoring_tutorial" className="tutorial-link">
+        <span className="link-icon">🤖</span>
+        <div className="link-text">
+          <strong>Agent Monitoring Tutorial</strong>
+          <span>LangChain agent monitoring</span>
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -159,6 +182,24 @@ import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 def get_response(prompt: str):
     return llm.invoke(prompt)`} />
   </div>
+
+  <div className="usage-example">
+    <h5>Streaming LLM Monitoring</h5>
+    <p>For async streaming LLM calls, use the <code>monitor_llm_astream</code> decorator:</p>
+    <StyledCodeBlock code={`from langchain_core.messages import HumanMessage
+from langchain_openai import ChatOpenAI
+
+async def main():
+    @arms.monitor_llm_astream
+    async def run_astream(prompt, llm):
+        return llm.astream_events([HumanMessage(content=prompt)])
+
+    llm = ChatOpenAI(model="gpt-4o-mini", streaming=True)
+
+    async for event in run_astream("Explain quantum computing in simple terms.", llm=llm):
+        if event["event"] == "on_chat_model_stream":
+            print(event["data"]["chunk"].content, end="", flush=True)`} />
+  </div>
 </div>
 
 ### OCR Monitoring
@@ -225,7 +266,7 @@ def get_response(prompt: str):
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <StyledCodeBlock code={`@arms.monitor_ocr_call("OCR_name")
+    <StyledCodeBlock code={`@arms.monitor_ocr_call
 def extract_text(image_path: str):
     return ocr_model.extract(image_path)`} />
   </div>
@@ -342,7 +383,7 @@ def get_embedding(text: str):
 <div className="monitoring-section">
   <div className="section-header">
     <h3>Agent Operation Monitoring</h3>
-    <p>Track multi-component execution, overall performance, and error handling across your AI agents.</p>
+    <p>Monitor LangChain agents and graphs by adding the ElsaiARMS callback to track agent execution, tool usage, and overall performance.</p>
   </div>
   
   <div className="metrics-grid">
@@ -350,7 +391,8 @@ def get_embedding(text: str):
       <h5>Agent Information</h5>
       <div className="metric-list">
         <span className="metric-tag">Agent Name</span>
-        <span className="metric-tag">Components Used</span>
+        <span className="metric-tag">Tool Calls</span>
+        <span className="metric-tag">Execution Steps</span>
       </div>
     </div>
     
@@ -360,25 +402,34 @@ def get_embedding(text: str):
         <span className="metric-tag">Timestamp</span>
         <span className="metric-tag">Status</span>
         <span className="metric-tag">Latency</span>
+        <span className="metric-tag">Total Tokens</span>
       </div>
     </div>
     
     <div className="metric-category">
-      <h5>Error Handling</h5>
+      <h5>LLM Interactions</h5>
       <div className="metric-list">
-        <span className="metric-tag">Error Details</span>
+        <span className="metric-tag">LLM Calls</span>
+        <span className="metric-tag">Token Usage</span>
+        <span className="metric-tag">Cost</span>
       </div>
     </div>
   </div>
 
   <div className="usage-example">
     <h5>Implementation Example</h5>
-    <StyledCodeBlock code={`@arms.monitor_agent_call("Agent_Name", components=["ocr", "embedding", "llm"])
-def process_document(image_path: str):
-    text = extract_text(image_path)
-    embedding = get_embedding(text)
-    response = get_response(text)
-    return response`} />
+    <StyledCodeBlock code={`from langchain_core.messages import HumanMessage
+from langgraph.graph import StateGraph
+
+# Initialize your LangChain graph
+graph = StateGraph(...)
+
+# Invoke the graph with ElsaiARMS callback
+messages = [HumanMessage(content="Your query here")]
+result = graph.invoke(
+    {"messages": messages},
+    config={"callbacks": [arms.langchain_callback]}
+)`} />
   </div>
 </div>
 
@@ -456,6 +507,78 @@ def process_document(image_path: str):
     font-size: 1.2rem;
     opacity: 0.95;
     font-weight: 300;
+  }
+
+  /* Tutorial Links Box */
+  .tutorial-links-box {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border: 2px solid var(--ifm-color-primary-light);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .tutorial-links-content h4 {
+    margin: 0 0 0.75rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .tutorial-links-content > p {
+    margin: 0 0 1.5rem 0;
+    color: #6c757d;
+    font-size: 1rem;
+  }
+
+  .tutorial-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .tutorial-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .tutorial-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-color: var(--ifm-color-primary);
+    text-decoration: none;
+  }
+
+  .link-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .link-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .link-text strong {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .link-text span {
+    color: #6c757d;
+    font-size: 0.9rem;
   }
 
   /* Steps Container */
@@ -834,6 +957,36 @@ def process_document(image_path: str):
     background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
   }
 
+  [data-theme='dark'] .tutorial-links-box {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-color: #4a5568;
+  }
+
+  [data-theme='dark'] .tutorial-links-content h4 {
+    color: #e1e1e1;
+  }
+
+  [data-theme='dark'] .tutorial-links-content > p {
+    color: #cbd5e0;
+  }
+
+  [data-theme='dark'] .tutorial-link {
+    background: #1a1a1a;
+    border-color: #4a5568;
+  }
+
+  [data-theme='dark'] .tutorial-link:hover {
+    border-color: var(--ifm-color-primary-light);
+  }
+
+  [data-theme='dark'] .link-text strong {
+    color: #e1e1e1;
+  }
+
+  [data-theme='dark'] .link-text span {
+    color: #9ca3af;
+  }
+
   [data-theme='dark'] .step-item,
   [data-theme='dark'] .code-section,
   [data-theme='dark'] .monitoring-section,
@@ -945,6 +1098,27 @@ def process_document(image_path: str):
 
     .guide-header p {
       font-size: 1.1rem;
+    }
+
+    .tutorial-links-box {
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .tutorial-links-content h4 {
+      font-size: 1.1rem;
+    }
+
+    .tutorial-links {
+      grid-template-columns: 1fr;
+    }
+
+    .tutorial-link {
+      padding: 1rem;
+    }
+
+    .link-icon {
+      font-size: 1.5rem;
     }
 
     .step-item {
