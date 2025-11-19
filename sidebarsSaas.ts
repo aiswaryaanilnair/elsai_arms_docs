@@ -16,6 +16,7 @@ const sidebars: SidebarsConfig = {
     'user_guide',
     'tutorial',
     'agent_monitoring_tutorial',
+    'release_notes',
   ],
 };
 

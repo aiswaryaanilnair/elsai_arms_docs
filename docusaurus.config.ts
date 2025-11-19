@@ -31,7 +31,7 @@ const config: Config = {
         docs: {
           id: 'default',
           path: 'sdk',
-          routeBasePath: 'sdk',
+          routeBasePath: 'onprem',
           sidebarPath: './sidebars.ts',
         },
         theme: {
@@ -66,7 +66,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'SDK',
+          label: 'ON-PREM',
         },
         {
           type: 'docSidebar',
@@ -84,8 +84,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'SDK',
-              to: '/sdk/intro',
+              label: 'ON-PREM',
+              to: '/onprem/intro',
             },
             {
               label: 'SAAS',

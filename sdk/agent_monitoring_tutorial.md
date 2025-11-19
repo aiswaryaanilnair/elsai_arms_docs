@@ -16,7 +16,7 @@ ElsaiARMS provides a LangChain callback that automatically tracks agent executio
 
 - ElsaiARMS installed and configured
 - LangChain and LangGraph installed
-- MongoDB connection configured (for SDK version)
+- MongoDB connection configured (for On-Prem version)
 
 ## Basic Usage
 

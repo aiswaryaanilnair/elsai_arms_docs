@@ -20,7 +20,7 @@ Before installing ElsaiARMS, ensure you have:
               <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <span>Python 3.9-3.12</span>
+          <span>Python 3.10, 3.11, 3.12</span>
         </div>
         <div className="prerequisite-item">
           <div className="prerequisite-icon">
@@ -37,19 +37,15 @@ Before installing ElsaiARMS, ensure you have:
 
 ## Installation Methods
 
-import InstallationTabs from '@site/src/components/InstallationTabs';
+import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
-<InstallationTabs 
-  command="pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms-sass/ elsai-arms==1.2.1"
-/>
+<StyledCodeBlock code="pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms-sass/ elsai-arms==1.2.3" />
 
 This installs the latest version of the `elsai-arms` package from your private PyPI repository.
 
 ## Verify Installation
 
 After installation, verify that ElsaiARMS is installed correctly:
-
-import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
 <StyledCodeBlock code="pip show elsai-arms" />
 

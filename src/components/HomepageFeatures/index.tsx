@@ -167,8 +167,8 @@ function HeroSection(): ReactNode {
           <div className={styles.heroButtons}>
             <a
               className="button button--secondary button--lg"
-              href="/documentation/sdk/intro">
-              SDK
+              href="/documentation/onprem/intro">
+              ON-PREM
             </a>
             <a
               className="button button--secondary button--lg"
