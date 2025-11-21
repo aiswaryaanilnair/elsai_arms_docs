@@ -9,7 +9,7 @@ import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 ## Usage Example
 #### Installation
 ```bash
-!pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms-sass/ elsai-arms==1.0.0
+!pip install --extra-index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms-sass/ elsai-arms==1.2.3
 ```
 
 #### Sample Code
