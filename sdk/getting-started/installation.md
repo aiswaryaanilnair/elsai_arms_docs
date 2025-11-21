@@ -74,7 +74,7 @@ import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
 To upgrade to latest version of ElsaiARMS:
 
-<StyledCodeBlock code="pip install --index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms/ elsai-arms --upgrade" />
+<StyledCodeBlock code="pip install --extra-index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms/ elsai-arms --upgrade" />
 
 ## Next Steps
 
