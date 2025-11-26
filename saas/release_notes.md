@@ -4,9 +4,23 @@ sidebar_position: 3
 
 # Release Notes
 
-## Version 1.2.3
+## Version 1.2.4
 
 **Current Version** - Latest release
+
+### Fixed
+- **API Key Validation**: Fixed SDK API key validation errors
+- **Project Information Loading**: Fixed duplicate project records created during agent tracing
+
+---
+
+## Version 1.2.3
+
+<div className="deprecated-notice">
+
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+
+</div>
 
 ### Fixed
 - Various bug fixes and stability improvements
@@ -18,7 +32,7 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.3 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
 
 </div>
 
@@ -32,7 +46,7 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.3 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
 
 </div>
 
@@ -46,7 +60,7 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.3 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
 
 </div>
 
@@ -60,7 +74,7 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.3 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
 
 </div>
 
@@ -75,7 +89,7 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.3 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
 
 </div>
 
@@ -91,7 +105,7 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.3 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
 
 </div>
 

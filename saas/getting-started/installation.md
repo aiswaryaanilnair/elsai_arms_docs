@@ -39,7 +39,7 @@ Before installing ElsaiARMS, ensure you have:
 
 import StyledCodeBlock from '@site/src/components/StyledCodeBlock';
 
-<StyledCodeBlock code="pip install --extra-index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms-sass/ elsai-arms==1.2.3" />
+<StyledCodeBlock code="pip install --extra-index-url https://arms-packages.elsaifoundry.ai/root/elsai-arms-sass/ elsai-arms==1.2.4" />
 
 This installs the latest version of the `elsai-arms` package from your private PyPI repository.
 
