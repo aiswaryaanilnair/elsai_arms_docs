@@ -4,6 +4,16 @@ sidebar_position: 3
 
 # Release Notes
 
+## Version 1.2.5
+
+**Current Version** - Latest release
+
+### Fixed
+- **Smart Token Usage Recovery**: Implemented a robust recovery mechanism for missing `token_usage` fields in older projects. The system now automatically recalculates token usage from historical run data instead of defaulting to zero, preventing data loss and `KeyError` crashes.
+- **Defensive Metrics Update**: Added safety checks in `_update_llm_metrics` to initialize missing token usage data from the current run if needed.
+
+---
+
 ## Version 1.2.4
 
 **Current Version** - Latest release
