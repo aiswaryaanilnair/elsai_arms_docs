@@ -4,23 +4,45 @@ sidebar_position: 3
 
 # Release Notes
 
-## Version 1.2.5
+## Version 1.3.0
 
 **Current Version** - Latest release
 
+### Added
+- **Web Search Metrics**: Comprehensive tracking for web search operations across OpenAI, Gemini, Claude, and Perplexity
+  - Sources count, citations count, Search queries
+- **Web Search Cost Tracking**: Separate cost calculation with provider-specific pricing models
+- **Enhanced Cost Reporting**: Separate `token_cost` field and updated `cost` field that includes web search costs
+
 ### Fixed
-- **Smart Token Usage Recovery**: Implemented a robust recovery mechanism for missing `token_usage` fields in older projects. The system now automatically recalculates token usage from historical run data instead of defaulting to zero, preventing data loss and `KeyError` crashes.
-- **Defensive Metrics Update**: Added safety checks in `_update_llm_metrics` to initialize missing token usage data from the current run if needed.
+- **Model Name Matching**: Improved logic to correctly identify specific model versions for accurate pricing
+
+---
+
+## Version 1.2.5
+
+<div className="deprecated-notice">
+
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
+
+</div>
+
+### Fixed
+- Token usage recovery and defensive metrics updates
 
 ---
 
 ## Version 1.2.4
 
-**Current Version** - Latest release
+<div className="deprecated-notice">
+
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
+
+</div>
 
 ### Fixed
-- **API Key Validation**: Fixed SDK API key validation errors
-- **Project Information Loading**: Fixed duplicate project records created during agent tracing
+- SDK API key validation errors
+- Duplicate project records during agent tracing
 
 ---
 
@@ -28,13 +50,12 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
 
 </div>
 
 ### Fixed
-- Various bug fixes and stability improvements
-- Resolved issues reported in previous versions
+- Bug fixes and stability improvements
 
 ---
 
@@ -42,13 +63,12 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
 
 </div>
 
 ### Added
-- **Agent Monitoring**: Comprehensive monitoring capabilities for AI agents
-- Enhanced tracking and observability for agent-based workflows
+- Agent monitoring and distributed tracing capabilities
 
 ---
 
@@ -56,13 +76,13 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
 
 </div>
 
 ### Fixed
-- Fixed Claude cost calculation issues
-- Resolved various bugs and performance issues
+- Claude cost calculation issues
+- Bug fixes and performance improvements
 
 ---
 
@@ -70,13 +90,12 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
 
 </div>
 
 ### Changed
-- **Improved Security**: Enhanced security measures and protocols
-- Better data protection and access controls
+- Enhanced security measures and data protection
 
 ---
 
@@ -84,14 +103,12 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
 
 </div>
 
 ### Changed
-- **Restructured Database Storage**: Complete overhaul of database storage architecture
-- Improved data organization and retrieval performance
-- Enhanced scalability and efficiency
+- Complete database storage architecture overhaul
 
 ---
 
@@ -99,15 +116,14 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
 
 </div>
 
 ### Added
-- **RAG Monitoring**: Comprehensive monitoring for Retrieval-Augmented Generation operations
-- **Embedding Monitoring**: Full tracking and analysis of embedding generation
-- **Basic Content Quality Assessment**: Initial content quality evaluation features
-- **GPT-5 Support**: Added support for GPT-5 models
+- RAG and embedding monitoring
+- Content quality assessment
+- GPT-5 model support
 
 ---
 
@@ -115,15 +131,14 @@ sidebar_position: 3
 
 <div className="deprecated-notice">
 
-⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.2.4 or later.
+⚠️ **Deprecated** - This version is no longer supported. Please upgrade to version 1.3.0 or later.
 
 </div>
 
 **Internal Release**
 
 ### Added
-- **LLM Monitoring**: Initial LLM (Large Language Model) monitoring capabilities
-- **OCR Monitoring**: Optical Character Recognition monitoring and tracking
+- LLM and OCR monitoring capabilities
 - Foundation for ElsaiARMS SaaS platform
 
 ---

@@ -15,10 +15,11 @@ Elsai ARMS is a lightweight monitoring and cost-tracking system for LLM-based ag
 ## Key Features
 
 - Token usage tracking
-- Cost tracking
+- Cost tracking (including separate web search costs)
 - Execution logs
 - Performance metrics
 - LLM Monitoring
+- Web search metrics tracking (sources, citations, search queries)
 - Success/error analysis
 - RAG (Retrieval-Augmented Generation) metrics
 - Embedding generation tracking
@@ -80,11 +81,25 @@ import CollapsibleMetrics from '@site/src/components/CollapsibleMetrics';
     { field: "Prompt", description: "The input text sent to the LLM." },
     { field: "Response", description: "The generated response from the LLM." },
     { field: "Relevance Score", description: "Score indicating how relevant the response is to the query." },
-    { field: "Cost", description: "Monetary cost of the LLM call." },
+    { field: "Cost", description: "Total monetary cost of the LLM call (includes token cost + web search cost if applicable)." },
+    { field: "Token Cost", description: "Monetary cost of tokens only (separate from web search costs)." },
     { field: "Tokens per Second", description: "Processing speed in tokens per second." },
     { field: "Output Throughput", description: "Output generation speed in tokens per second." },
     { field: "Total Throughput", description: "Overall processing speed including input and output." },
     { field: "Governance Metrics", description: "Content safety, prompt injection detection, and response quality assessment." }
+  ]}
+/>
+
+<CollapsibleMetrics
+  title="Web Search Metrics"
+  metrics={[
+    { field: "Provider", description: "Type of web search implementation: 'native' (OpenAI/Perplexity), 'grounding' (Gemini), or 'tool_based' (Claude)." },
+    { field: "Enabled", description: "Boolean indicating whether web search was used in this LLM call." },
+    { field: "Search Count", description: "Number of web searches performed." },
+    { field: "Sources Found", description: "Total number of sources found during web search." },
+    { field: "Citations Used", description: "Number of citations actually used in the response text." },
+    { field: "Search Cost", description: "Monetary cost of web search operations, separate from token costs." },
+    { field: "Citations", description: "List of citations with URLs and titles (limited to 20 citations)." }
   ]}
 />
 
